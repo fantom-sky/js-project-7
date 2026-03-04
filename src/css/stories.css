@@ -1,0 +1,137 @@
+.stories{
+   padding: 64px 0; 
+   background-color: #F6F4F1;  
+   /* под вопросом */
+}
+@media only screen and (min-width: 1440px) {
+    .stories {
+        padding: 80px 0;
+    }
+    
+}
+.title {
+    font-family: Open Sans;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    color: #02060A;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+@media only screen and (min-width: 1440px) {
+    .title {
+        font-size: 48px;
+    }
+
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    color: #02060A;
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1440px) {
+    .subtitle {
+        font-size: 18px;
+    }
+}
+
+.feedbacks {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+.feedback-card{
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+    .feedbacks {
+        flex-direction: row;
+        gap: 32px;
+    }
+
+}
+.rating {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin-bottom: 32px;
+}
+
+.feedback-rate {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+}
+.star {
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+}
+.star-filled {
+    fill: #02060A;
+}
+
+.star-half {
+    /* fill: #02060A; */
+}
+
+.star-outline {
+    fill: none;
+    stroke: #02060A;
+    stroke-width: 2px;
+}
+.feedback-description {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+.feedback-author{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+margin-bottom: 40px;
+}
+@media only screen and (min-width:1440px) {
+    .feedback-author {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .feedback-description {
+        font-size: 20px;
+    }
+
+}
+.stories-container-btn{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-direction: row;
+}
+.stories-btn{
+    border: 1px solid #C3B49D;
+    background: transparent;
+    border-radius: 8px;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+}
