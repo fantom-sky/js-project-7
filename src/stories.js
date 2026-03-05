@@ -14,6 +14,7 @@ const buttonStories = document.querySelectorAll(".stories-btn");
 
 const storiesSwiper = new Swiper('.stories-swiper', {
   modules: [Navigation, Pagination],
+   initialSlide: 0,
  slidesPerGroup: 1,
   slidesPerView: 1,
   spaceBetween: 32,
@@ -27,20 +28,20 @@ const storiesSwiper = new Swiper('.stories-swiper', {
     el: '#stories .stories-navigation .swiper-pagination',
     clickable: true,
     dynamicBullets: true,
-    dynamicMainBullets: 6,
+    dynamicMainBullets: 5,
   },
 
   breakpoints: {
     768: {
-       slidesPerGroup: 1,
+       slidesPerGroup: 2,
       slidesPerView: 2,
     },
     1440: {
-       slidesPerGroup: 1,
+       slidesPerGroup: 2,
       slidesPerView: 2,
       },
     },
-    watchOverflow: false,
+    // watchOverflow: false,
 });
 
 fetch(`${BASE_URL}${ANDROID_URL}`)
@@ -90,7 +91,6 @@ function createFeedbackCard(items) {
             <p class="feedback-description">${review.description}</p>
             <p class="feedback-author">${review.author}</p>
             </div> `).join('');
-    // feedbacks.insertAdjacentHTML('beforeend', marcupFeedback);
     feedbacks.innerHTML = marcupFeedback;
 }
 
@@ -98,3 +98,6 @@ function createFeedbackCard(items) {
 buttonStories.forEach(btn => {
   btn.addEventListener("click", () => btn.blur());
 })
+console.log(document.querySelector('#stories .stories-navigation .swiper-pagination'))
+
+console.log(storiesSwiper.pagination)

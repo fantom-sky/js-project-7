@@ -1,7 +1,6 @@
 .stories{
    padding: 64px 0; 
    background-color: #F6F4F1;  
-   /* под вопросом */
 }
 @media only screen and (min-width: 1440px) {
     .stories {
@@ -9,7 +8,7 @@
     }
     
 }
-.title {
+.title-stories {
     font-family: Open Sans;
     font-size: 36px;
     font-weight: 700;
@@ -19,15 +18,12 @@
     margin-bottom: 24px;
     letter-spacing: -0.01em;
 }
-
 @media only screen and (min-width: 1440px) {
-    .title {
+    .title-stories {
         font-size: 48px;
     }
-
 }
-
-.subtitle {
+.subtitle-stories {
     font-size: 16px;
     font-weight: 400;
     text-align: center;
@@ -35,37 +31,27 @@
     color: #02060A;
     margin-bottom: 40px;
 }
-
 @media only screen and (min-width: 1440px) {
-    .subtitle {
+    .subtitle-stories  {
         font-size: 18px;
     }
 }
-
 .feedback-card{
     margin-bottom: 40px;
 }
-
-/* @media only screen and (min-width: 768px) {
-    .feedbacks {
-        flex-direction: row;
-        gap: 32px;
-    }
-
-} */
+ /* #region rating */
 .rating {
     display: flex;
     flex-direction: row;
     gap: 4px;
-    margin-bottom: 32px;
+    margin-bottom: 32px !important;
+    justify-content: flex-start !important;
 }
-
 .feedback-rate {
     display: flex;
     gap: 4px;
     align-items: center;
 }
-
 .stars {
     display: flex;
     flex-direction: row;
@@ -82,15 +68,22 @@
     fill: #02060A;
 }
 
-.star-half {
-    /* fill: #02060A; */
-}
-
+/* .star-half {
+    /* fill: #02060A; 
+}  */
+/* .star-half {
+    fill: none !important;
+    stroke: currentColor;
+} */
 .star-outline {
     fill: none;
     stroke: #02060A;
     stroke-width: 2px;
 }
+
+ /* #endregion rating */
+
+
 .feedback-description {
     font-size: 18px;
     line-height: 1.5;
@@ -102,20 +95,18 @@
     font-weight: 600;
     line-height: 1.5;
 margin-bottom: 40px;
+margin-top: auto;
 }
 @media only screen and (min-width:1440px) {
     .feedback-author {
         font-size: 16px;
     }
-}
-
-@media only screen and (min-width: 1440px) {
     .feedback-description {
         font-size: 20px;
     }
-
 }
-/* button */
+
+/*  #region button */
 .stories-container-btn{
     display: flex;
         align-items: center;
@@ -146,47 +137,95 @@ margin-bottom: 40px;
     cursor: default;
 pointer-events: none;
 }
+
+/* #endregion button  */
+
+
 /* #region SWIPER */
 .stories-navigation {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin-top: 40px; */
 }
+
 .stories-container-btn {
     display: flex;
     gap: 16px;
 }
 
 .stories-navigation .swiper-pagination {
-    position: static;
-    width: auto !important; 
-    overflow: visible !important;
-    text-align: left;
-    display: flex;
+    position: relative;
+    left: 0;
+    transform: none;
+    /* display: flex; */
     justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
     gap: 8px;
+    width: auto;
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+
 }
+
 .swiper-pagination-bullet {
     background: #C3B49D;
     opacity: 1;
 }
+
+.stories-navigation .swiper-pagination-bullet {
+    flex: 0 0 auto;
+    background: #C3B49D;
+    width: 8px;
+    height: 8px;
+    transition: transform 200ms ease, background 200ms ease;
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .stories-navigation .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+    }
+}
+
 .swiper-pagination-bullet-active {
     background: #02060A !important;
+
 }
-.stories-navigation .swiper-pagination-bullet {
-    margin: 0 !important;
+
+#stories .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 8px;
+    height: 8px;
+    text-align: center;
 }
-.swiper-pagination-bullets-dynamic {
-    transform: none !important;
-    left: auto !important;
+
+#stories .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: 0;
+    transform: translateX(-25%);
 }
-.story-card {
-    width: 100%;
-    box-sizing: border-box;
+@media only screen and (min-width: 767px) {
+    #stories .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+        transform: translateX(-8%);
+    }
+    
 }
-.swiper{
-    overflow: hidden;
-} 
+
+#stories .swiper-pagination {
+    position: relative;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    text-align: left;
+}
 /* #endregion SWIPER */
+
+.stories-pagination-clip {
+    width: 144px;
+    overflow: hidden;
+}
