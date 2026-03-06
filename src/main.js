@@ -1,4 +1,3 @@
-import './js/pets-list.js';
 import { initAboutUsSwiper } from './js/about-us-swiper';
 initAboutUsSwiper();
 import "./js/faq.js";
