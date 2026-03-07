@@ -345,7 +345,7 @@ h1,h2,h3,h4,h5,h6 {
     background-color: rgba(2, 6, 10, 0.05);
     border-radius: 40px;
 }
-
+/*
 .pet-list__btn:hover {
     color: #02060A;
     background-color: #EEE9E3;
@@ -369,5 +369,17 @@ h1,h2,h3,h4,h5,h6 {
 .pet-card__btn:active {
     color: #FFFFFF;
     background-color: #88765C;
+    border: 1px solid #88765C;
+}*/
+
+.pet-list__btn:hover, .pet-list__btn:focus, .pet-list__btn:active {
+    color: #02060A;
+    background-color: #EEE9E3;
+    border: 1px solid #88765C;
+}
+
+.pet-card__btn:hover, .pet-card__btn:focus, .pet-card__btn:active {
+    color: #FFFFFF;
+    background-color: #EEE9E3;
     border: 1px solid #88765C;
 }
