@@ -8,6 +8,7 @@
 
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
+
     /*? section */
     .about {
         padding-block: 80px;
@@ -24,10 +25,12 @@
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: #02060a;
-    text-align: center;    
+    text-align: center;
 }
+
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
+
     /*? h2 */
     .about-us-heading-two {
         font-size: 48px;
@@ -48,7 +51,7 @@
     margin-bottom: 24px;
 }
 
-.swiper .swiper-wrapper .swiper-slide {
+.about-us-swiper .swiper-wrapper .swiper-slide {
     overflow: hidden;
     max-width: 335px;
     height: auto;
@@ -61,29 +64,31 @@
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
-    .swiper .swiper-wrapper .swiper-slide {
+    .about-us-swiper .swiper-wrapper .swiper-slide {
         max-width: 704px;
         height: 404px;
     }
 }
+
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
     .about-us-container .swiper {
         margin-bottom: 48px;
     }
-    .swiper .swiper-wrapper .swiper-slide {
+
+    .about-us-swiper .swiper-wrapper .swiper-slide {
         max-width: 1312px;
         height: 753px;
     }
 }
 
-.slide-picture {
+.about-us-swiper .slide-picture {
     display: block;
     line-height: 0;
     object-fit: cover;
 }
 
-.slide-picture::after {
+.about-us-swiper .slide-picture::after {
     content: "";
     position: absolute;
     top: 0;
@@ -96,7 +101,7 @@
 }
 
 /* Styles for Mobile devices */
-.slide-text-wrapper {
+.about-us-swiper .slide-text-wrapper {
     position: absolute;
     left: 20px;
     bottom: 20px;
@@ -109,18 +114,20 @@
     line-height: 1.5;
     color: #f6f4f1;
 }
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
-    .slide-text-wrapper {
+    .about-us-swiper .slide-text-wrapper {
         left: 32px;
         bottom: 32px;
         max-width: 548px;
         max-height: 108px;
     }
 }
+
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
-    .slide-text-wrapper {
+    .about-us-swiper .slide-text-wrapper {
         left: 64px;
         bottom: 64px;
         max-height: 108px;
@@ -139,6 +146,7 @@
 }
 
 .swiper-el-bullets-box {
+    position: relative;
     overflow: hidden;
     width: 60px;
     height: 8px;
@@ -161,10 +169,12 @@
         height: 28px;
         padding: 10px 0;
     }
+
     .swiper-el-bullets-box {
         width: 100%;
         margin: 0 auto;
     }
+
     .swiper-el-buttons-box {
         position: absolute;
         left: -28px;
@@ -175,6 +185,7 @@
         padding: 0;
     }
 }
+
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
     .swiper-el-buttons-box {
@@ -182,6 +193,8 @@
         width: 1368px;
     }
 }
+
+
 
 
 /*? Pagination */
