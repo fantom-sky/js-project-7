@@ -1,8 +1,6 @@
 <section class="about" id="about">
   <div class="about-us-container container">
     <h2 class="about-us-heading-two">Чому Хатинка Лапок</h2>
-    <!-- <div class="swiper mySwiper my-swiper"> -->
-    <!-- <div class="swiper mySwiper"> -->
     <div class="swiper about-us-swiper">
       <ul class="swiper-wrapper">
         <!-- Image 1 -->
@@ -134,17 +132,31 @@
           </p>
         </li>
       </ul>
-      <button class="swiper-button-prev">
-        <svg class="swiper-button-icon" width="24" height="24">
-          <use href="/img/icons.svg#arrow_back"></use>
-        </svg>
-      </button>
-      <button class="swiper-button-next">
-        <svg class="swiper-button-icon" width="24" height="24">
-          <use href="/img/icons.svg#arrow_forward"></use>
-        </svg>
-      </button>
-      <div class="swiper-pagination"></div>
+    </div>
+    <div class="about-us-swiper-elements">
+      <div class="swiper-el-bullets-box">
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-el-buttons-box">
+        <button
+          class="swiper-button-prev"
+          type="button"
+          aria-label="Previous slide"
+        >
+          <svg class="swiper-button-icon" width="24" height="24">
+            <use href="/img/icons.svg#arrow_back"></use>
+          </svg>
+        </button>
+        <button
+          class="swiper-button-next"
+          type="button"
+          aria-label="Next slide"
+        >
+          <svg class="swiper-button-icon" width="24" height="24">
+            <use href="/img/icons.svg#arrow_forward"></use>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
