@@ -3,6 +3,7 @@ import axios from 'axios';
 const orderForm = document.querySelector('.order-form');
 const orderBackdrop = document.querySelector('.order-modal-overlay');
 const orderCloseBtn = document.querySelector('.order-close-btn');
+const orderSubmitBtn = document.querySelector('.order-submit-btn');
 
 export default function openOrderModal(animalId) {
   // Add animal id to order form data set
@@ -61,6 +62,7 @@ function handleEscKeydown(event) {
 
 async function onOrderSubmit(event) {
   event.preventDefault();
+  orderSubmitBtn.disabled = true;
 
   const { name, phone, comment } = event.currentTarget.elements;
   const animalId = event.currentTarget.dataset.animalId;
@@ -82,8 +84,10 @@ async function onOrderSubmit(event) {
 
     closeOrderModal();
 
-    console.log(orderData);
+    alert(orderData);
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
+  } finally {
+    orderSubmitBtn.disabled = false;
   }
 }
