@@ -52,11 +52,11 @@ function onAdoptClick() {
   const animalId = currentAnimalId;
   closePetModal();
 
-  /*
+  
   // Code to open Order Modal (Section 08).
   // Uncomment and add import { openOrderModal } from './modal-application.js' at the top when ready.
   openOrderModal(animalId);
-  */
+  
 }
 
 function fillModalWithData(data) {
