@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as basicLightbox from 'basiclightbox';
-import 'basiclightbox/dist/basicLightbox.min.css';
+// import 'basiclightbox/dist/basicLightbox.min.css';
 
 const orderForm = document.querySelector('.order-form');
 const orderBackdrop = document.querySelector('.order-modal-overlay');
@@ -98,23 +98,31 @@ async function onOrderSubmit(event) {
   }
 }
 
-function showNotification(message, timeout = 3000) {
-  const instance = basicLightbox.create(message);
+function showNotification(message) {
+  const instance = basicLightbox.create(
+    `
+    <div class="order-toast">
+    <button class="order-close-btn" type="button">
+      <svg class="order-close-icon" width="24" height="24">
+        <use href="../img/icons.svg#close"></use>
+      </svg>
+    </button>
+      ${message}  
+    </div>
+  `,
+    {
+      onShow: instance => {
+        instance.element().querySelector('button').onclick = instance.close;
+      },
+    }
+  );
 
   instance.show();
-
-  instance.element().addEventListener('click', () => {
-    instance.close();
-  });
-
-  setTimeout(() => {
-    instance.close();
-  }, timeout);
 }
 
 function createSuccessTemplate(order) {
   return `
-    <div class="order-toast order-toast-success">
+
       <h3 class="order-toast-title">Замовлення створено ✅</h3>
 
       <p><strong>№ замовлення:</strong> ${order.orderNum}</p>
@@ -122,26 +130,13 @@ function createSuccessTemplate(order) {
       <p><strong>Тварина:</strong> ${order.animalName} (${order.species})</p>
 
       <p class="order-toast-phone">📞 ${order.phone}</p>
-    </div>
   `;
 }
 
 function createErrorTemplate(message) {
-  return `
-    <div class="order-toast order-toast-error">
-
-      <h3 class="order-toast-title">
-        Сталася помилка
-      </h3>
-
-      <p class="order-toast-message">
-        ${message}
-      </p>
-
-      <p class="order-toast-help">
-        Спробуйте ще раз або перевірте введені дані.
-      </p>
-
-    </div>
+  return ` 
+      <h3 class="order-toast-title">Сталася помилка ❌</h3>    
+      <p><strong>${message}</strong></p>
+      <p><small>Спробуйте ще раз або перевірте введені дані.</small></p>
   `;
 }
