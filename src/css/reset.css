@@ -40,5 +40,12 @@ body {
     font-size: 14px;
 }
 
-/*font-family: "Open Sans",
-sans-serif;*/
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url('../fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url('../fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+}

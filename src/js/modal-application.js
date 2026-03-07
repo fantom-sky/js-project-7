@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as basicLightbox from 'basiclightbox';
-// import 'basiclightbox/dist/basicLightbox.min.css';
+import 'basiclightbox/dist/basicLightbox.min.css';
 
 const orderForm = document.querySelector('.order-form');
 const orderBackdrop = document.querySelector('.order-modal-overlay');
