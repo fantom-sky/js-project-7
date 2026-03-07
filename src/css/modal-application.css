@@ -202,3 +202,56 @@ body:has(.order-modal-overlay.is-open) {
     width: 240px;
   }
 }
+
+/* Notification */
+.order-toast {
+  width: 100%;
+  max-width: 380px;
+
+  padding: 20px;
+  border-radius: 10px;
+
+  background: #d7f5da;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.order-toast-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.order-toast-phone {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.order-toast-error {
+  width: 100%;
+  max-width: 380px;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  background: #fde2e2;
+  border: 1px solid #f5b5b5;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.order-toast-message {
+  margin-top: 6px;
+}
+
+.order-toast-help {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+}

@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
+
 const orderForm = document.querySelector('.order-form');
 const orderBackdrop = document.querySelector('.order-modal-overlay');
 const orderCloseBtn = document.querySelector('.order-close-btn');
@@ -71,8 +74,11 @@ async function onOrderSubmit(event) {
     name: name.value.trim(),
     phone: phone.value,
     animalId: animalId,
-    comment: comment.value.trim(),
   };
+
+  if (comment.value.trim()) {
+    formData.comment = comment.value.trim();
+  }
 
   try {
     const response = await axios.post(
@@ -84,10 +90,58 @@ async function onOrderSubmit(event) {
 
     closeOrderModal();
 
-    alert(orderData);
+    showNotification(createSuccessTemplate(orderData), 5000);
   } catch (error) {
-    alert(error.message);
+    showNotification(createErrorTemplate(error.message));
   } finally {
     orderSubmitBtn.disabled = false;
   }
+}
+
+function showNotification(message, timeout = 3000) {
+  const instance = basicLightbox.create(message);
+
+  instance.show();
+
+  instance.element().addEventListener('click', () => {
+    instance.close();
+  });
+
+  setTimeout(() => {
+    instance.close();
+  }, timeout);
+}
+
+function createSuccessTemplate(order) {
+  return `
+    <div class="order-toast order-toast-success">
+      <h3 class="order-toast-title">Замовлення створено ✅</h3>
+
+      <p><strong>№ замовлення:</strong> ${order.orderNum}</p>
+      <p><strong>Клієнт:</strong> ${order.name}</p>
+      <p><strong>Тварина:</strong> ${order.animalName} (${order.species})</p>
+
+      <p class="order-toast-phone">📞 ${order.phone}</p>
+    </div>
+  `;
+}
+
+function createErrorTemplate(message) {
+  return `
+    <div class="order-toast order-toast-error">
+
+      <h3 class="order-toast-title">
+        Сталася помилка
+      </h3>
+
+      <p class="order-toast-message">
+        ${message}
+      </p>
+
+      <p class="order-toast-help">
+        Спробуйте ще раз або перевірте введені дані.
+      </p>
+
+    </div>
+  `;
 }
