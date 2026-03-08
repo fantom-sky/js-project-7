@@ -14,7 +14,8 @@ h6 {
 }
 
 .pets {
-  padding-top: 80px;
+  padding-top: 80px; 
+  padding-bottom: 80px;
 }
 .pet-card__image-wrapper {
   margin-bottom: 16px;
@@ -213,7 +214,6 @@ h6 {
   font-style: normal;
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 32px;
   transition:
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -262,8 +262,9 @@ h6 {
 
 /* Планшет (Tablet) - 768px */
 @media screen and (max-width: 1311px) {
-  .pets-container {
-    margin-top: 64px;
+  .pets {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   .our-pets__types-list {
@@ -282,7 +283,6 @@ h6 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px 16px;
-    margin-top: 32px;
     overflow: visible;
   }
 
