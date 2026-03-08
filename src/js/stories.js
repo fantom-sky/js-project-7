@@ -6,7 +6,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import icons from '../img/icons.svg'
+import icons from '../img/icons.svg';
 
 const BASE_URL = `https://paw-hut.b.goit.study`;
 const ANDROID_URL = `/api/feedbacks`;
