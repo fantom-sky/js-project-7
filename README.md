@@ -28,10 +28,12 @@
 - CSS3 - стилізація
 - JavaScript (ES6+)
 - Vite — збірка та запуск проєкту
-- Swiper.js — реалізація слайдера
 - Axios — HTTP-запити до API
-- BasicLightbox — модальні повідомлення
 - REST API — отримання даних про тварин, відгуки та створення замовлень
+- Swiper (https://swiperjs.com/demos) — реалізація слайдера
+- accordion-js (https://www.npmjs.com/package/accordion-js) — акордеон для реалізації списку питань та відповідей (FAQ)
+- css-star-rating (https://www.npmjs.com/package/css-star-rating) — налаштування компонентів рейтингу
+- basicLightbox (https://basiclightbox.electerious.com/) — модальні повідомлення
  
 
 ## Деплой
