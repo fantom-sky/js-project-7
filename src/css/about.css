@@ -147,7 +147,6 @@
 
 .swiper-el-bullets-box {
     position: relative;
-    overflow: hidden;
     width: 60px;
     height: 8px;
 }
